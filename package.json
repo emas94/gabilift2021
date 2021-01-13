@@ -1,6 +1,7 @@
 {
   "name": "gabilift2021",
   "version": "0.0.0",
+  "homepage": "emas94.github.io",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
