@@ -1,0 +1,170 @@
+header {
+  height: 100vh;
+  .top-header {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    @media (max-width: 900px) {
+      padding: 10px;
+    }
+    p {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 40px;
+      @media (max-width: 900px) {
+        font-size: 20px;
+        line-height: 20px;
+      }
+      span {
+        display: block;
+      }
+    }
+    .logo {
+      height: 94px;
+      width: 84px;
+      background: url("../../assets/img/logo1.png") center no-repeat;
+      background-size: contain;
+    }
+  }
+  .nav-main {
+    background: rgba(252, 235, 79, 0.86);
+    @media (max-width: 900px) {
+      height: 50px;
+    }
+    > ul {
+      @media (max-width: 900px) {
+        display: none;
+      }
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+      > li {
+        list-style: none;
+        padding: 28px 0;
+        &.dropdown-item {
+          display: flex;
+          align-items: center;
+          position: relative;
+          cursor: pointer;
+          &:after {
+            content: "";
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            display: block;
+            background: url("../../assets/img/arrow.svg") center no-repeat;
+            background-size: 30%;
+            background-color: #fff;
+            margin-left: 10px;
+            transition: 0.3s linear;
+          }
+          &:hover,
+          &:focus {
+            .dropdown {
+              display: block;
+              visibility: visible;
+              opacity: 1;
+            }
+            &::after {
+              transform: rotate(90deg);
+            }
+          }
+          .dropdown {
+            position: absolute;
+            left: 0;
+            top: calc(100% - 20px);
+            // top: 100%;
+            transform: translateX(-20%);
+            background: #fff;
+            z-index: 9999;
+            padding: 30px;
+            transition: 0.3s linear;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            ul {
+              display: flex;
+              flex-direction: column;
+              li {
+                margin-bottom: 10px;
+                a {
+                  text-align: center;
+                  &:hover,
+                  &:focus {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+        a {
+          font-size: 20px;
+          text-decoration: none;
+          line-height: 29px;
+          color: #000;
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .front {
+    position: relative;
+    margin-top: 20px;
+    height: 58vh;
+    width: 100%;
+    background: url("../../assets/img/karetka1.jpg") center no-repeat;
+    background-size: cover;
+    @media (max-width: 900px) {
+      height: 40vh;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(252, 235, 79, 0.65) 100%
+      );
+    }
+  }
+  .button-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+    }
+    .primary {
+      @media (max-width: 900px) {
+        margin-top: 50px;
+      }
+      &:first-of-type {
+        margin-right: 150px;
+        @media (max-width: 900px) {
+          margin-right: 0;
+        }
+      }
+      &:last-of-type::before {
+        transform: rotate(20deg) translateY(-50%);
+        @media (max-width: 900px) {
+          transform: rotate(-20deg) translateY(-50%);
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
